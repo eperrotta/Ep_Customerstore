@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Esolver Magento Extension
+ * by Kendesign
+ * @category    Kendesign
+ * @package     Kendesign_Esolver
+ * @copyright   Copyright (c) 2012 Kendesign (http://www.kendesign.it)
+ */
+-->
+<config>
+    <modules>
+        <Ep_Customerstore>
+            <version>0.1.0</version>
+        </Ep_Customerstore>
+    </modules>
+    <global>
+        <blocks>
+            <adminhtml>
+                <ep_customerstore>
+                    <class>Ep_Customerstore_Block</class>
+                </ep_customerstore>
+                <rewrite>
+                    <sales_order_create_customer_grid>Ep_Customerstore_Block_Adminhtml_Sales_Order_Create_Customer_Grid</sales_order_create_customer_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ep_customerstore before="Mage_Adminhtml">Ep_Customerstore_Adminhtml</ep_customerstore>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
